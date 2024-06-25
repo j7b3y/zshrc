@@ -52,7 +52,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "mollifier/cd-gitroot"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "b4b4r07/enhancd", use:init.sh
+zplug "b4b4r07/enhancd", use:init.sh 
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -61,7 +61,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load --verbose
+zplug load --verbose > /dev/null
 
 # AOSP Build 
 if [ -d "$HOME/bin" ] ; then

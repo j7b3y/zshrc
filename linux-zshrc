@@ -23,6 +23,7 @@ setopt share_history
 setopt hist_ignore_all_dups
 setopt inc_append_history
 setopt menu_complete
+setopt nonomatch
 autoload -Uz compinit ; compinit
 setopt correct
 zstyle ':completion:*' menu select
@@ -52,7 +53,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "mollifier/cd-gitroot"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "b4b4r07/enhancd", use:init.sh 
+zplug "b4b4r07/enhancd", use:init.sh
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -62,20 +63,3 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose > /dev/null
-
-# AOSP Build 
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -d "$HOME/platform-tools" ] ; then
-    PATH="$HOME/platform-tools:$PATH"
-fi
-
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/mnt/ccache

@@ -5,6 +5,8 @@ export HISTFILE=$HOME/.zsh-history
 export HISTSIZE=100000
 export SAVEHIST=1000000
 export WORDCHARS='*?_.[]~-=&;!#$%^(){}<>'
+export SSH_AUTH_SOCK=~/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
+export PATH="$(brew --prefix python)/libexec/bin:$PATH"
 
 # Alias
 alias ls='ls --color=auto'

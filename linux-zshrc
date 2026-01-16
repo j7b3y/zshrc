@@ -46,6 +46,16 @@ zle -N peco-history-selection
 precmd () { vcs_info }
 PROMPT='%F{magenta}%B%n%b%f@%F{blue}%U%m%u%f:%F{green}%1~%f%F{cyan}$vcs_info_msg_0_%f%F{white}$%f '
 
+# Key bind
+bindkey '^[[H'  beginning-of-line
+bindkey '^[[F'  end-of-line
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[4~' end-of-line
+bindkey '^[[3~' delete-char
+bindkey '^[[2~' overwrite-mode
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+
 # zplug
 source ~/.zplug/init.zsh
 
